@@ -161,6 +161,8 @@ class WhisperModel:
         else:
             feat_kwargs = {}
 
+        logging.info("Feature extractor kwargs: %s", feat_kwargs)
+
         self.feature_extractor = FeatureExtractor(**feat_kwargs)
         self.num_samples_per_token = self.feature_extractor.hop_length * 2
         self.frames_per_second = (
